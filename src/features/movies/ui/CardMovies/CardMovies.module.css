@@ -1,0 +1,21 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.poster {
+    border-radius: 16px;
+    overflow: hidden;
+
+    img {
+        object-fit: cover;
+        height: 100%;
+        aspect-ratio: 218/327;
+    }
+}
+
+.titleLink {
+    font-weight: 500;
+    color: var(--text-h)
+}

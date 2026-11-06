@@ -1,0 +1,17 @@
+.banner {
+    position: absolute;
+    height: inherit;
+    width: 100%;
+
+    &:after {
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(rgba(4, 21, 45, 0) 0%, rgb(18, 18, 18) 79.17%);
+        content: '';
+    }
+}
+
+.image {
+    height: inherit;
+    object-fit: cover;
+}

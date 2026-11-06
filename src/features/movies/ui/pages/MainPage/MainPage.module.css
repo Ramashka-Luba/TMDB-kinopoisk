@@ -1,0 +1,38 @@
+.wrapper {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: 20px;
+    z-index: 1;
+    color: var(--color-white);
+}
+
+.contentTitle {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    @media (max-width: 600px) {
+        font-size: 36px;
+    }
+}
+
+.contentDesc {
+    margin-top: 24px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+
+
+

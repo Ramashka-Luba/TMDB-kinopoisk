@@ -1,0 +1,15 @@
+
+.containerBtn {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-block: 40px 20px;
+}
+
+.container {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+}
+
