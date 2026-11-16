@@ -35,6 +35,8 @@ button {
 }
 
 :root {
+  --color-skeleton: #d8d9da;
+  --color-surface: #fff;
   --color-white: #ffffff;
   --color-white-rgb: 255 255 255;
   --color-neutral-850: #242424;
@@ -82,6 +84,8 @@ button {
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --color-skeleton: #33363c;
+    --color-surface: #1f2023;
     --color-white: #f8fafc;
     --color-white-rgb: 248 250 252;
     --color-neutral-850: #0b1120;

@@ -1,5 +1,5 @@
 import {useGetMoviesByCategoryQuery} from "@/features/movies/api/moviesApi";
-import {CardMovies} from "@/features/movies/ui/CardMovies/CardMovies";
+import {ItemMovies} from "@/features/movies/ui/CardMovies/ItemMovies";
 import s from './CategoryPage.module.css'
 import {useParams} from "react-router";
 import type {CategoryType} from "@/features/movies/api/moviesApi.type";
@@ -33,7 +33,7 @@ export const CategoryPage = () => {
 
             <div className={s.container}>
                 {data?.results.map(item => (
-                    <CardMovies
+                    <ItemMovies
                         key={item.id}
                         id={item.id}
                         title={item.title}

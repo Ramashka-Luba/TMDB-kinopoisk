@@ -1,5 +1,5 @@
 import {useGetMoviesByCategoryQuery} from "@/features/movies/api/moviesApi";
-import {CardMovies} from "@/features/movies/ui/CardMovies/CardMovies";
+import {ItemMovies} from "@/features/movies/ui/CardMovies/ItemMovies";
 import s from './CategorySection.module.css'
 import type {CategoryItem} from "@/common/constants";
 import {CategoryTitle} from "@/features/movies/ui/CategoryTitle/CategoryTitle";
@@ -24,7 +24,7 @@ export  const CategorySection = ({category}: Props) => {
 
             <div className={s.container}>
                 {displayMovie && displayMovie.map(item => (
-                    <CardMovies
+                    <ItemMovies
                         key={item.id}
                         id={item.id}
                         title={item.title}

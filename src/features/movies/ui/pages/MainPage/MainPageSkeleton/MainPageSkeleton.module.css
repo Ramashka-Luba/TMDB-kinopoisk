@@ -1,0 +1,126 @@
+@keyframes loading {
+    0% {
+        background-position: -200px 0
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.bannerSkeleton {
+    position: relative;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    height: 600px;
+
+    &:after {
+        position: absolute;
+        inset: 0;
+        background-color: var(--color-skeleton);
+        background-image: linear-gradient(90deg, var(--color-skeleton),
+        color-mix(in sRGB, var(--color-surface) 50%, var(--color-skeleton)), var(--color-skeleton));
+        background-repeat: no-repeat;
+        background-size: 300px 100%;
+        animation: loading 2s ease-in-out infinite;
+        content: '';
+    }
+}
+
+.wrapperSkeleton {
+    padding-top: 30px;
+}
+
+.headingSkeleton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.titleSkeleton {
+    position: relative;
+    width: 170px;
+    height: 36px;
+
+
+    &:after {
+        position: absolute;
+        inset: 0;
+        background-color: var(--color-skeleton);
+        background-image: linear-gradient(90deg, var(--color-skeleton),
+        color-mix(in sRGB, var(--color-surface) 50%, var(--color-skeleton)), var(--color-skeleton));
+        border-radius: 4px;
+        background-repeat: no-repeat;
+        background-size: 200px 100%;
+        animation: loading 2s ease-in-out infinite;
+        content: ''
+    }
+}
+
+.buttonSkeleton {
+    position: relative;
+    width: 112px;
+    height: 40px;
+
+    &:after {
+        position: absolute;
+        inset: 0;
+        background-color: var(--color-skeleton);
+        background-image: linear-gradient(90deg, var(--color-skeleton),
+        color-mix(in sRGB, var(--color-surface) 50%, var(--color-skeleton)), var(--color-skeleton));
+        border-radius: 999px;
+        background-repeat: no-repeat;
+        background-size: 200px 100%;
+        animation: loading 2s ease-in-out infinite;
+        content: ''
+    }
+}
+
+.containerSkeleton {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+}
+
+.cardSkeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pasterSkeleton {
+    position: relative;
+    width: 100%;
+    height: 260px;
+
+    &:after {
+        position: absolute;
+        inset: 0;
+        background-color: var(--color-skeleton);
+        background-image: linear-gradient(90deg, var(--color-skeleton),
+        color-mix(in sRGB, var(--color-surface) 50%, var(--color-skeleton)), var(--color-skeleton));
+        border-radius: 16px;
+        background-repeat: no-repeat;
+        background-size: 200px 100%;
+        animation: loading 2s ease-in-out infinite;
+        content: ''
+    }
+}
+
+.tileLinkSkeleton {
+    position: relative;
+    width: 100%;
+    height: 24px;
+    &:after {
+        position: absolute;
+        inset: 0;
+        background-color: var(--color-skeleton);
+        background-image: linear-gradient(90deg, var(--color-skeleton),
+        color-mix(in sRGB, var(--color-surface) 50%, var(--color-skeleton)), var(--color-skeleton));
+        border-radius: 4px;
+        background-repeat: no-repeat;
+        background-size: 200px 100%;
+        animation: loading 2s ease-in-out infinite;
+        content: ''
+    }
+}

@@ -4,6 +4,7 @@ import {Header} from "@/common/components/Header/Header";
 import s from './App.module.css'
 import {ScrollToTop} from "@/common/components/ScrollToTop/ScrollToTop";
 import {Footer} from "@/common/components/Footer/Footer";
+import {ToastContainer} from "react-toastify";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                 <Routing/>
             </div>
             <Footer/>
+            <ToastContainer/>
         </div>
     )
 }
