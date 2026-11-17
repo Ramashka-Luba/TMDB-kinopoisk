@@ -1,5 +1,6 @@
 import s from "./MainPageSkeleton.module.css";
 import {Fragment} from "react";
+import {ItemMoviesSkeleton} from "@/features/movies/ui/ItemMovies/ItemMoviesSkeleton/ItemMoviesSkeleton";
 
 export const MainPageSkeleton = () => {
     return (
@@ -13,12 +14,8 @@ export const MainPageSkeleton = () => {
                 <div className={s.containerSkeleton}>
                     {Array(6).fill(null).map((_, index) => (
                         <Fragment key={index + 1}>
-                            <div className={s.cardSkeleton}>
-                                <span className={s.pasterSkeleton}></span>
-                                <span className={s.tileLinkSkeleton}></span>
-                            </div>
+                            <ItemMoviesSkeleton/>
                         </Fragment>
-
                     ))}
                 </div>
             </div>

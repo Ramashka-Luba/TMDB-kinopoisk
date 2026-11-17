@@ -1,22 +1,18 @@
 import {useGetMoviesByCategoryQuery} from "@/features/movies/api/moviesApi";
-import {ItemMovies} from "@/features/movies/ui/CardMovies/ItemMovies";
 import s from './CategoryPage.module.css'
 import {useParams} from "react-router";
 import type {CategoryType} from "@/features/movies/api/moviesApi.type";
 import {CATEGORIES} from "@/common/constants";
 import {ButtonNavLink} from "@/common/components/Button/ButtonNavLink/ButtonNavLink";
 import {CategoryTitle} from "@/features/movies/ui/CategoryTitle/CategoryTitle";
-import {Pagination} from "@/features/movies/ui/Pagination/Pagination";
-import {useState} from "react";
+import {ListMovies} from "@/features/movies/ui/ListMovies/ListMovies";
+import {usePageParam} from "@/common/hooks";
 
 export const CategoryPage = () => {
-    const [currentPage, setCurrentPage] = useState(1);
-
-    // Извлекаем текущую категорию из URL (например: 'popular')
     const {category = 'popular'} = useParams<{ category: CategoryType }>()
+    const {currentPage, pageChangeHandler} = usePageParam()
 
-    // Передаем категорию напрямую в хук. RTK Query сам перезапустит запрос при смене URL!
-    const {data, isLoading, error} = useGetMoviesByCategoryQuery({category: category, params: {page: currentPage} })
+    const {data, error} = useGetMoviesByCategoryQuery({category: category, params: {page: currentPage} })
 
     return (
         <section>
@@ -26,28 +22,16 @@ export const CategoryPage = () => {
                 ))}
             </div>
 
-            {isLoading && <div>Loading...</div>}
             {error && <div>Произошла ошибка при загрузке</div>}
 
-            {!isLoading && !error &&  <CategoryTitle category={category}/>}
+            {!error &&  <CategoryTitle category={category}/>}
 
-            <div className={s.container}>
-                {data?.results.map(item => (
-                    <ItemMovies
-                        key={item.id}
-                        id={item.id}
-                        title={item.title}
-                        bgUrl={item.poster_path}
-                    />
-                ))}
-            </div>
-
-            <Pagination
+            <ListMovies
+                data={data?.results}
                 currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-                pagesCount={Math.min(data?.total_pages || 1, 500)}
+                onChangePage={pageChangeHandler}
+                totalPages={data?.total_pages}
             />
         </section>
     );
 };
-

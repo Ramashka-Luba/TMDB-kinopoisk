@@ -1,5 +1,5 @@
 import {useGetMoviesByCategoryQuery} from "@/features/movies/api/moviesApi";
-import {ItemMovies} from "@/features/movies/ui/CardMovies/ItemMovies";
+import {ItemMovies} from "@/features/movies/ui/ItemMovies/ItemMovies";
 import s from './CategorySection.module.css'
 import type {CategoryItem} from "@/common/constants";
 import {CategoryTitle} from "@/features/movies/ui/CategoryTitle/CategoryTitle";
