@@ -39,18 +39,21 @@ export const SearchForm = ({setSearchQuery}: Props) => {
     }
 
     return (
-        <form className={s.form} onSubmit={onSubmitHandler}>
-            <input
-                className={s.input}
-                name="searchQuery"
-                type='search'
-                placeholder='Search for a movie'
-                defaultValue={currentQuery}
-                onInput={onInputHandler}
-                required
-            />
-            <Button type={'submit'} title={'Search'}/>
-        </form>
+        <>
+            <form className={s.form} onSubmit={onSubmitHandler}>
+                <input
+                    className={s.input}
+                    name="searchQuery"
+                    type='search'
+                    placeholder='Search for a movie'
+                    defaultValue={currentQuery}
+                    onInput={onInputHandler}
+                    required
+                />
+                <Button type={'submit'} title={'Search'}/>
+            </form>
+            {currentQuery && <div className={s.text}>Result for "{currentQuery}"</div>}
+        </>
     );
 };
 

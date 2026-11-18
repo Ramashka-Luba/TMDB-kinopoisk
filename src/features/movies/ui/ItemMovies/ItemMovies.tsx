@@ -10,13 +10,12 @@ type Props = {
 
 export const ItemMovies = ({id, title, bgUrl}: Props ) => {
     return (
-        <div className={s.card}>
+        <div className={s.item}>
             <div className={s.poster}>
                 <NavLink to={`movies/${id}`}>
                     {bgUrl
                         ? <img className={s.img} src={`https://image.tmdb.org/t/p/original/${bgUrl}`} alt="image movi"/>
-                        : <img className={s.icon} src={imageIcon} alt="image movi"/>}
-                    {/*{bgUrl && <img src={`https://image.tmdb.org/t/p/original/${bgUrl}`} alt="image movi"/>}*/}
+                        : <img className={s.img} src={imageIcon} alt="image movi"/>}
                 </NavLink>
             </div>
 

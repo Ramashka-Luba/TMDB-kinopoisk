@@ -9,10 +9,14 @@ export const SearchPage = () => {
     const {currentPage, searchParams, pageChangeHandler} = usePageParam()
     const [searchQuery, setSearchQuery] = useState(() => searchParams.get('query') || '');
 
-    const {data} = useSearchMoviesQuery({query: searchQuery, page: currentPage}, {skip: !searchQuery})
+    const {data, error} = useSearchMoviesQuery({query: searchQuery, page: currentPage}, {skip: !searchQuery})
+
+    if (error) {
+        console.log(error)
+    }
 
     return (
-        <>
+        <section>
             <SearchForm setSearchQuery={setSearchQuery}/>
 
             {!searchQuery && <div className={s.text}>Enter a movie title to start searching.</div>}
@@ -26,6 +30,6 @@ export const SearchPage = () => {
                     totalPages={data?.total_pages}
                 />
             }
-        </>
+        </section>
     );
 };

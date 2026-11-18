@@ -8,7 +8,11 @@ import {MainPageSkeleton} from "@/features/movies/ui/pages/MainPage/MainPageSkel
 
 export const MainPage = () => {
 
-    const { isLoading} = useGetMoviesByCategoryQuery({ category: 'popular', params: { page: 1 } });
+    const {isLoading, error} = useGetMoviesByCategoryQuery({ category: 'popular', params: { page: 1 } });
+
+    if (error) {
+        console.log(error)
+    }
 
     if (isLoading) return (
         <MainPageSkeleton/>
