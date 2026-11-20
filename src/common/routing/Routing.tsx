@@ -6,17 +6,20 @@ import {PageNotFound} from "@/common/components/PageNotFound/PageNotFound";
 import {Path} from "@/common/routing/Path";
 import {CategoryPage} from "@/features/movies/ui/pages/CategoryPage/CategoryPage";
 import {SearchPage} from "@/features/movies/ui/pages/SearchPage/SearchPage";
+import {CardMovie} from "@/features/movies/ui/components/CardMovie/CardMovie";
 
 export const Routing = () => (
     <Routes>
         <Route path={Path.Main} element={<MainPage/>}/>
 
-        <Route path={'/movies'} element={<Navigate to={Path.Category} />} /> {/* Если зашли на /movies, редиректим на популярные */}
+        <Route path={'/movies'} element={<Navigate to={Path.Category}/>}/> {/* Если зашли на /movies, редиректим на популярные */}
         <Route path={Path.CategoryDetail} element={<CategoryPage/>}/> {/* Основной роут для категорий */}
+        <Route path={Path.CardDetail} element={<CardMovie/>}/> {/* Переходим нва карточку фильма */}
 
         <Route path={Path.Filtered} element={<FilteredPage/>}/>
         <Route path={Path.Search} element={<SearchPage/>}/>
         <Route path={Path.Favorites} element={<FavoritesPage/>}/>
+
         <Route path={Path.NotFound} element={<PageNotFound/>}/>
     </Routes>
 );

@@ -4,8 +4,8 @@ import {useParams} from "react-router";
 import type {CategoryType} from "@/features/movies/api/moviesApi.type";
 import {CATEGORIES} from "@/common/constants";
 import {ButtonNavLink} from "@/common/components/Button/ButtonNavLink/ButtonNavLink";
-import {CategoryTitle} from "@/features/movies/ui/CategoryTitle/CategoryTitle";
-import {ListMovies} from "@/features/movies/ui/ListMovies/ListMovies";
+import {CategoryTitle} from "@/features/movies/ui/components/CategoryTitle/CategoryTitle";
+import {ListMovies} from "@/features/movies/ui/components/ListMovies/ListMovies";
 import {usePageParam} from "@/common/hooks";
 
 export const CategoryPage = () => {

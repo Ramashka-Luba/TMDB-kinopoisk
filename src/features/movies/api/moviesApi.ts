@@ -1,5 +1,5 @@
 import {baseApi} from "@/app/baseApi";
-import type {GetMoviesArgs, MovieResponse} from "@/features/movies/api/moviesApi.type";
+import type {CardResponse, GetMoviesArgs, MovieDetails, MovieResponse} from "@/features/movies/api/moviesApi.type";
 
 export const moviesApi = baseApi.injectEndpoints({
     endpoints: (build) => ({
@@ -18,11 +18,35 @@ export const moviesApi = baseApi.injectEndpoints({
             }),
             providesTags: ['Movies']
         }),
+
+        getMovieById: build.query<MovieDetails, number>({
+            query: (movieId) => ({
+                url: `movie/${movieId}`,
+            }),
+            providesTags: ['Movies']
+        }),
+
+        getMovieCreditsById: build.query<CardResponse, number>({
+            query: (movieId) => ({
+                url: `movie/${movieId}/credits`,
+            }),
+            providesTags: ['Movies']
+        }),
+
+        getSimilarMovie: build.query<MovieResponse, number>({
+            query: (movieId) => ({
+                url: `movie/${movieId}/similar`,
+            }),
+            providesTags: ['Movies']
+        }),
     })
 })
 
 export const {
     useGetMoviesByCategoryQuery,
-    useSearchMoviesQuery
+    useSearchMoviesQuery,
+    useGetMovieByIdQuery,
+    useGetMovieCreditsByIdQuery,
+    useGetSimilarMovieQuery
 } = moviesApi
 

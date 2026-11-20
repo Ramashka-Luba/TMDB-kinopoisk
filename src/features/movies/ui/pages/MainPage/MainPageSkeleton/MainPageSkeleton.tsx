@@ -1,6 +1,6 @@
 import s from "./MainPageSkeleton.module.css";
 import {Fragment} from "react";
-import {ItemMoviesSkeleton} from "@/features/movies/ui/ItemMovies/ItemMoviesSkeleton/ItemMoviesSkeleton";
+import {ItemMoviesSkeleton} from "@/features/movies/ui/components/ItemMovies/ItemMoviesSkeleton/ItemMoviesSkeleton";
 
 export const MainPageSkeleton = () => {
     return (

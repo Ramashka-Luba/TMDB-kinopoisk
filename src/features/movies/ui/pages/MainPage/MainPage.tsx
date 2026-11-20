@@ -2,17 +2,13 @@ import {Banner} from "@/features/movies/ui/pages/MainPage/Banner/Banner";
 import s from './MainPage.module.css'
 import {CATEGORIES} from "@/common/constants";
 import {CategorySection} from "@/features/movies/ui/pages/MainPage/CategorySection/CategorySection";
-import {SearchForm} from "@/features/movies/ui/SearchForm/SearchForm";
+import {SearchForm} from "@/features/movies/ui/components/SearchForm/SearchForm";
 import {useGetMoviesByCategoryQuery} from "@/features/movies/api/moviesApi";
 import {MainPageSkeleton} from "@/features/movies/ui/pages/MainPage/MainPageSkeleton/MainPageSkeleton";
 
 export const MainPage = () => {
 
-    const {isLoading, error} = useGetMoviesByCategoryQuery({ category: 'popular', params: { page: 1 } });
-
-    if (error) {
-        console.log(error)
-    }
+    const {isLoading} = useGetMoviesByCategoryQuery({ category: 'popular', params: { page: 1 } });
 
     if (isLoading) return (
         <MainPageSkeleton/>

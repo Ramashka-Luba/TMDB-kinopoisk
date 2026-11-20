@@ -1,0 +1,25 @@
+.rating {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-white);
+    box-shadow: 0 4px 16px rgb(var(--color-blue-600-rgb) / .15);
+}
+
+.negative {
+    background-color: var(--color-red-600);
+}
+
+.neutral {
+    background-color: var(--color-yellow-400);
+    color: var(--color-gray-900);
+}
+
+.positive {
+    background-color: var(--color-green-600);
+}

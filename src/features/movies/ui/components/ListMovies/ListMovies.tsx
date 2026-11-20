@@ -1,6 +1,6 @@
 import s from "./ListMovies.module.css";
-import {ItemMovies} from "@/features/movies/ui/ItemMovies/ItemMovies";
-import {Pagination} from "@/features/movies/ui/Pagination/Pagination";
+import {ItemMovies} from "@/features/movies/ui/components/ItemMovies/ItemMovies";
+import {Pagination} from "@/features/movies/ui/components/Pagination/Pagination";
 import type {MovieItem} from "@/features/movies/api/moviesApi.type";
 
 type Props = {
@@ -21,6 +21,7 @@ export const ListMovies = ({data = [], currentPage, onChangePage, totalPages = 1
                         id={item.id}
                         title={item.title}
                         bgUrl={item.poster_path}
+                        rating={item.vote_average}
                     />
                 ))}
             </div>

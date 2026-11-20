@@ -6,7 +6,7 @@ import {ScrollToTop} from "@/common/components/ScrollToTop/ScrollToTop";
 import {Footer} from "@/common/components/Footer/Footer";
 import {ToastContainer} from "react-toastify";
 import {useGlobalLoading} from "@/common/hooks";
-import {LinearProgress} from "@/features/movies/ui/LinearProgress/LinearProgress";
+import {LinearProgress} from "@/common/components/LinearProgress/LinearProgress";
 
 function App() {
 

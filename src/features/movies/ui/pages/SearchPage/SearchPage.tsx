@@ -1,19 +1,15 @@
 import s from './SearchPage.module.css'
 import {useState} from "react";
 import {useSearchMoviesQuery} from "@/features/movies/api/moviesApi";
-import {SearchForm} from "@/features/movies/ui/SearchForm/SearchForm";
-import {ListMovies} from "@/features/movies/ui/ListMovies/ListMovies";
+import {SearchForm} from "@/features/movies/ui/components/SearchForm/SearchForm";
+import {ListMovies} from "@/features/movies/ui/components/ListMovies/ListMovies";
 import {usePageParam} from "@/common/hooks";
 
 export const SearchPage = () => {
     const {currentPage, searchParams, pageChangeHandler} = usePageParam()
     const [searchQuery, setSearchQuery] = useState(() => searchParams.get('query') || '');
 
-    const {data, error} = useSearchMoviesQuery({query: searchQuery, page: currentPage}, {skip: !searchQuery})
-
-    if (error) {
-        console.log(error)
-    }
+    const {data} = useSearchMoviesQuery({query: searchQuery, page: currentPage}, {skip: !searchQuery})
 
     return (
         <section>
